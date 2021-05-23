@@ -3,9 +3,11 @@ import {
     View,
     Text,
 } from 'react-native';
-import {newContext} from '../App'
+
+// import {newContext} from '../App'
+import {useProvider} from '../provider/MyContextProvider';
 function LoginComponentHook() {
-    const [contextstore, setContextStore] = useState(useContext(newContext))
+    const [contextstore, setContextStore] = useState(useProvider())
     const[name,setName] = useState();
     const[status,setStatus] = useState()
     useEffect(() => {

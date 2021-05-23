@@ -20,11 +20,12 @@ import {
 import {
   Colors
 } from 'react-native/Libraries/NewAppScreen';
-import LoginComponentHook from './compnents/LoginComponentHook'
-export const newContext = React.createContext();
+import LoginComponentHook from './compnents/LoginComponentHook';
+import {MyProvider} from './provider/MyContextProvider'
+// export const newContext = createContext();
 function App(){
   const isDarkMode = useColorScheme() === 'dark';
-  const { Provider, Consumer } = newContext;
+  // const { Provider, Consumer } = newContext;
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
@@ -35,9 +36,10 @@ function App(){
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-       <Provider value={{status: false,name:'shashank'}}>
+       {/* <Provider value={{status: false,name:'shashank'}}>
           <LoginComponentHook/>
-       </Provider>
+       </Provider> */}
+       <MyProvider ChildComponents={ <LoginComponentHook/>} />
       </ScrollView>
     </SafeAreaView>
   );
