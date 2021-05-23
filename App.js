@@ -20,7 +20,7 @@ import {
 import {
   Colors
 } from 'react-native/Libraries/NewAppScreen';
-import LoginComponentHook from './compnents/LoginComponentHook';
+import UpdateContextComponentHook from './compnents/UpdateContextComponentHook';
 import {MyProvider} from './provider/MyContextProvider'
 // export const newContext = createContext();
 function App(){
@@ -37,9 +37,9 @@ function App(){
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
        {/* <Provider value={{status: false,name:'shashank'}}>
-          <LoginComponentHook/>
+          <UpdateContextComponentHook/>
        </Provider> */}
-       <MyProvider ChildComponents={ <LoginComponentHook/>} />
+       <MyProvider ChildComponents={ <UpdateContextComponentHook/>} />
       </ScrollView>
     </SafeAreaView>
   );
